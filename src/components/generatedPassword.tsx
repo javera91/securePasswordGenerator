@@ -1,0 +1,3 @@
+interface GeneratedPasswordProps {
+    contrasena: string;
+}
