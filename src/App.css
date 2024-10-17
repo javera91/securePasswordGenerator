@@ -1,42 +1,65 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif; /* Fuente elegante */
+  background-color: #f4f4f4; /* Color de fondo suave */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Color de texto */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Contenedor principal */
+.custom-container  {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 20px auto; /* Centrar el contenedor */
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco para el contenido */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Títulos */
+h1 {
+  font-size: 2.5em; /* Tamaño de fuente grande para el título */
+  color: #4CAF50; /* Color verde para el título */
+  text-align: center; /* Centrar el título */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h2 {
+  font-size: 1.8em; /* Tamaño de fuente para subtítulos */
+  color: #333; /* Color de subtítulos */
 }
 
-.card {
-  padding: 2em;
+/* Estilos de botones */
+button {
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color de texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+  transition: background-color 0.3s; /* Transición suave */
 }
 
-.read-the-docs {
-  color: #888;
+button:hover {
+  background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos de entrada */
+input[type="text"],
+input[type="number"] {
+  width:max-content; /* Ancho máximo */
+  padding: 10px; /* Espaciado interno */
+  margin: 10px; /* Margen superior e inferior */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Notificación */
+.notificacion {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center; /* Centrar texto */
 }
