@@ -16,11 +16,13 @@ const GenerationControls: React.FC<GenerationControlsProps> = ({ onGenerar }) =>
 
     const manejarLongitudChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newLongitud = Number(e.target.value);
-        // Set minimum length to 8
-        if (newLongitud >= 8) {
+        // Set minimum length to 8 and maximum length to 16
+        if (newLongitud >= 8 && newLongitud <= 16) {
             setLongitud(newLongitud);
-        } else {
+        } else if (newLongitud < 8) {
             setLongitud(8); // Reset to minimum length if less than 8
+        } else {
+            setLongitud(16); // Reset to maximum length if greater than 16
         }
     };
 
@@ -28,7 +30,7 @@ const GenerationControls: React.FC<GenerationControlsProps> = ({ onGenerar }) =>
         <div className='custom-container'>
             <label>
                 Longitud:
-                <input type="number" value={longitud} onChange={manejarLongitudChange} />
+                <input type="number" value={longitud} onChange={manejarLongitudChange} min={8} max={16} />
             </label>
             <label>
                 Incluir Mayúsculas:
