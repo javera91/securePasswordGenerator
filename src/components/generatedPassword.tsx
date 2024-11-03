@@ -3,11 +3,9 @@ import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
-
 interface GeneratedPasswordProps {
     contrasena: string;
 }
-
 
 const GeneratedPassword: React.FC<GeneratedPasswordProps> = ({ contrasena }) => {
     const [open, setOpen] = useState(false); // Estado para controlar la visibilidad del Alert
