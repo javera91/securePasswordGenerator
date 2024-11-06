@@ -1,50 +1,125 @@
-# React + TypeScript + Vite
+# Indicaciones del proyecto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## H1 - Escribir tu primer componente de React.
+Se creó el componente generatedPassword.tsx
 
-Currently, two official plugins are available:
+## H2 - Crear archivos con múltiples componentes: Crear componentes para los controles de generación (longitud, criterios) y la contraseña resultante.
+```ruby
+  const manejarGenerar = () => {
+        onGenerar(longitud, incluirMayusculas, incluirNumeros, incluirSimbolos);
+    };
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+    const manejarLongitudChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newLongitud = Number(e.target.value);
+        // Set minimum length to 8 and maximum length to 16
+        if (newLongitud >= 8 && newLongitud <= 16) {
+            setLongitud(newLongitud);
+        } else if (newLongitud < 8) {
+            setLongitud(8); // Reset to minimum length if less than 8
+        } else {
+            setLongitud(16); // Reset to maximum length if greater than 16
+        }
+    };
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- ¿Qué hace este fragmento de código?
+- ¿Cómo cumple con el requisito de la habilidad?
+- ¿Por qué es la mejor forma de implementarlo?
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## H3 - Usar JSX para crear el formulario de selección de criterios y mostrar la contraseña. 
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```ruby
+<div className='custom-container'>
+            <label>
+                Longitud:
+                <input type="number" value={longitud} onChange={manejarLongitudChange} min={8} max={16} />
+            </label>
+            <label>
+                Incluir Mayúsculas:
+                <input type="checkbox" checked={incluirMayusculas} onChange={() => setIncluirMayusculas(!incluirMayusculas)} />
+            </label>
+            <label>
+                Incluir Números:
+                <input type="checkbox" checked={incluirNumeros} onChange={() => setIncluirNumeros(!incluirNumeros)} />
+            </label>
+            <label>
+                Incluir Símbolos:
+                <input type="checkbox" checked={incluirSimbolos} onChange={() => setIncluirSimbolos(!incluirSimbolos)} />
+            </label>
+            <button onClick={manejarGenerar}>Generar Contraseña</button>
+        </div>
 ```
+## H4 - Usar JSX para crear el formulario de selección de criterios y mostrar la contraseña. 
+```ruby
+            <label>
+                Longitud:
+                <input type="number" value={longitud} onChange={manejarLongitudChange} min={8} max={16} />
+            </label>
+            <label>
+                Incluir Mayúsculas:
+                <input type="checkbox" checked={incluirMayusculas} onChange={() => setIncluirMayusculas(!incluirMayusculas)} />
+            </label>
+            <label>
+                Incluir Números:
+                <input type="checkbox" checked={incluirNumeros} onChange={() => setIncluirNumeros(!incluirNumeros)} />
+            </label>
+            <label>
+                Incluir Símbolos:
+                <input type="checkbox" checked={incluirSimbolos} onChange={() => setIncluirSimbolos(!incluirSimbolos)} />
+            </label>
+```
+## H5 - Configurar componentes con props: 
+## H6 - Renderizar condicionalmente:
+
+```ruby
+              const manejarLongitudChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newLongitud = Number(e.target.value);
+        // Set minimum length to 8 and maximum length to 16
+        if (newLongitud >= 8 && newLongitud <= 16) {
+            setLongitud(newLongitud);
+        } else if (newLongitud < 8) {
+            setLongitud(8); // Reset to minimum length if less than 8
+        } else {
+            setLongitud(16); // Reset to maximum length if greater than 16
+        }
+    };
+```
+
+## H7 - Renderizar múltiples componentes a la vez:
+   ```
+   <div>
+            <h1>Generador de Contraseñas Seguras</h1>
+            <GenerationControls onGenerar={generarContrasena} />
+            <GeneratedPassword contrasena={contrasena}  />
+        </div>
+  
+  ```
+
+## H8 - Mantener componentes puros:
+
+    ```ruby
+    
+    ```
+## H9 - Entender la UI como árboles:
+  ```ruby
+  ```
+
+## H10 - Controlar eventos del usuario:
+    ```ruby
+    ```
+## H11 - Gestionar el estado:
+
+  ```ruby
+  ```
+
+## H12 - Levantar el estado:
+
+  ```ruby
+  ```
+
+## H13 - Acceder a valores del DOM:
+
+  ```ruby
+  ```
+
+## H14 - Efectos opcionales:
