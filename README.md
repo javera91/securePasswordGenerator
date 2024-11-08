@@ -106,18 +106,17 @@ Usar props hace que el componente sea reutilizable y fácil de mantener, permiti
 ## H6 - Renderizar condicionalmente:
 
 ```ruby
-              const manejarLongitudChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newLongitud = Number(e.target.value);
-        // Set minimum length to 8 and maximum length to 16
-        if (newLongitud >= 8 && newLongitud <= 16) {
-            setLongitud(newLongitud);
-        } else if (newLongitud < 8) {
-            setLongitud(8); // Reset to minimum length if less than 8
-        } else {
-            setLongitud(16); // Reset to maximum length if greater than 16
-        }
-    };
+{length >= 8 && length <= 16 && (
+    <button onClick={handleGenerate}>Generate Password</button>
+)}
+
 ```
+### ¿Qué hace este fragmento de código?
+Permite configurar y gestionar la longitud y los criterios de una contraseña (mayúsculas, números, símbolos) usando un formulario. Al hacer clic en el botón, genera la contraseña con los parámetros seleccionados.
+### ¿Cómo cumple con el requisito de la habilidad?
+Configura los controles de generación con props, permite al usuario personalizar los criterios de la contraseña y pasa la configuración al componente padre para su procesamiento.
+### ¿Por qué es la mejor forma de implementarlo?
+Es modular y reutilizable, con un manejo claro del estado y la lógica. Usar props para pasar la función de generación permite una separación de responsabilidades y facilita su mantenimiento.
 
 ## H7 - Renderizar múltiples componentes a la vez:
    ```
