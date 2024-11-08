@@ -119,14 +119,18 @@ Configura los controles de generación con props, permite al usuario personaliza
 Es modular y reutilizable, con un manejo claro del estado y la lógica. Usar props para pasar la función de generación permite una separación de responsabilidades y facilita su mantenimiento.
 
 ## H7 - Renderizar múltiples componentes a la vez:
-   ```
+```ruby
    <div>
-            <h1>Generador de Contraseñas Seguras</h1>
-            <GenerationControls onGenerar={generarContrasena} />
-            <GeneratedPassword contrasena={contrasena}  />
+            <h1>Secure Password Generator</h1>
+            <GenerationControls onGenerate={generatePassword} />
+            <GeneratedPassword password={password}  />
         </div>
-  
-  ```
+```
+### ¿Qué hace este fragmento de código?
+Permite configurar y gestionar la longitud y los criterios de una contraseña (mayúsculas, números, símbolos) usando un formulario. Al hacer clic en el botón, genera la contraseña con los parámetros seleccionados.
+### ¿Cómo cumple con el requisito de la habilidad?
+Configura los controles de generación con props, permite al usuario personalizar los criterios de la contraseña y pasa la configuración al componente padre para su procesamiento.
+### ¿Por qué es la mejor forma de implementarlo?
 
 ## H8 - Mantener componentes puros:
 
