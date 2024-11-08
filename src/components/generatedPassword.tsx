@@ -8,7 +8,7 @@ interface GeneratedPasswordProps {
 }
 
 const GeneratedPassword: React.FC<GeneratedPasswordProps> = ({ password }) => {
-    const [open, setOpen] = useState(false); // Estado para controlar la visibilidad del Alert
+    const [open, setOpen] = useState(false); // Status to control the visibility of the Alert
     const passwordRef = useRef<HTMLInputElement>(null);
     const copypassword = () => { 
         if (passwordRef.current) {
