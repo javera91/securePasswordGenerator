@@ -44,7 +44,7 @@ const GeneratedPassword: React.FC<GeneratedPasswordProps> = ({ password }) => {
                 open={open}
                 autoHideDuration={6000}
                 onClose={handleClose}
-                message="The password has been saved in the clipboard.."
+                message="The password has been saved in the clipboard."
                 action={action}
                 anchorOrigin={{ vertical:'top', horizontal:'center' }}
             />
