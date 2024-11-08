@@ -1,50 +1,50 @@
 import React, { useState } from 'react';
 
 interface GenerationControlsProps {
-    onGenerar: (longitud: number, incluirMayusculas: boolean, incluirNumeros: boolean, incluirSimbolos: boolean) => void;
+    onGenerate: (length: number, includeUppercase: boolean, includeNumbers: boolean, includeSymbols: boolean) => void;
 }
 
-const GenerationControls: React.FC<GenerationControlsProps> = ({ onGenerar }) => {
-    const [longitud, setLongitud] = useState(12);
-    const [incluirMayusculas, setIncluirMayusculas] = useState(true);
-    const [incluirNumeros, setIncluirNumeros] = useState(true);
-    const [incluirSimbolos, setIncluirSimbolos] = useState(true);
+const GenerationControls: React.FC<GenerationControlsProps> = ({ onGenerate }) => {
+    const [length, setlength] = useState(12);
+    const [includeUppercase, setincludeUppercase] = useState(true);
+    const [includeNumbers, setincludeNumbers] = useState(true);
+    const [includeSymbols, setincludeSymbols] = useState(true);
 
-    const manejarGenerar = () => {
-        onGenerar(longitud, incluirMayusculas, incluirNumeros, incluirSimbolos);
+    const handleGenerate = () => {
+        onGenerate(length, includeUppercase, includeNumbers, includeSymbols);
     };
 
-    const manejarLongitudChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newLongitud = Number(e.target.value);
+    const handleLengthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newlength = Number(e.target.value);
         // Set minimum length to 8 and maximum length to 16
-        if (newLongitud >= 8 && newLongitud <= 16) {
-            setLongitud(newLongitud);
-        } else if (newLongitud < 8) {
-            setLongitud(8); // Reset to minimum length if less than 8
+        if (newlength >= 8 && newlength <= 16) {
+            setlength(newlength);
+        } else if (newlength < 8) {
+            setlength(8); // Reset to minimum length if less than 8
         } else {
-            setLongitud(16); // Reset to maximum length if greater than 16
+            setlength(16); // Reset to maximum length if greater than 16
         }
     };
 
     return (
         <div className='custom-container'>
             <label>
-                Longitud:
-                <input type="number" value={longitud} onChange={manejarLongitudChange} min={8} max={16} />
+                Length:
+                <input type="number" value={length} onChange={handleLengthChange} min={8} max={16} />
             </label>
             <label>
-                Incluir Mayúsculas:
-                <input type="checkbox" checked={incluirMayusculas} onChange={() => setIncluirMayusculas(!incluirMayusculas)} />
+                Include uppercase letters:
+                <input type="checkbox" checked={includeUppercase} onChange={() => setincludeUppercase(!includeUppercase)} />
             </label>
             <label>
-                Incluir Números:
-                <input type="checkbox" checked={incluirNumeros} onChange={() => setIncluirNumeros(!incluirNumeros)} />
+                Include Numbers:
+                <input type="checkbox" checked={includeNumbers} onChange={() => setincludeNumbers(!includeNumbers)} />
             </label>
             <label>
-                Incluir Símbolos:
-                <input type="checkbox" checked={incluirSimbolos} onChange={() => setIncluirSimbolos(!incluirSimbolos)} />
+                Include Symbols:
+                <input type="checkbox" checked={includeSymbols} onChange={() => setincludeSymbols(!includeSymbols)} />
             </label>
-            <button onClick={manejarGenerar}>Generar Contraseña</button>
+            <button onClick={handleGenerate}>Generate Password</button>
         </div>
     );
 };

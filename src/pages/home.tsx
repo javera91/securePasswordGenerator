@@ -4,29 +4,29 @@ import GenerationControls from '../components/generationControls';
 import GeneratedPassword from '../components/generatedPassword';
 
 const Home: React.FC = () => {
-    const [contrasena, setContrasena] = useState('');
+    const [password, setpassword] = useState('');
     
 
-    const generarContrasena = (longitud: number, incluirMayusculas: boolean, incluirNumeros: boolean, incluirSimbolos: boolean) => {
-        const caracteres = 'abcdefghijklmnopqrstuvwxyz' +
-            (incluirMayusculas ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : '') +
-            (incluirNumeros ? '0123456789' : '') +
-            (incluirSimbolos ? '!@#$%^&*()_+' : '');
+    const generatePassword = (length: number, includeUppercase: boolean, includeNumbers: boolean, includeSymbols: boolean) => {
+        const characters = 'abcdefghijklmnopqrstuvwxyz' +
+            (includeUppercase ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : '') +
+            (includeNumbers ? '0123456789' : '') +
+            (includeSymbols ? '!@#$%^&*()_+' : '');
 
-        let nuevaContrasena = '';
-        for (let i = 0; i < longitud; i++) {
-            nuevaContrasena += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+        let newPassword = '';
+        for (let i = 0; i < length; i++) {
+            newPassword += characters.charAt(Math.floor(Math.random() * characters.length));
         }
-        setContrasena(nuevaContrasena);
+        setpassword(newPassword);
     };
 
     
 
     return (
         <div>
-            <h1>Generador de Contraseñas Seguras</h1>
-            <GenerationControls onGenerar={generarContrasena} />
-            <GeneratedPassword contrasena={contrasena}  />
+            <h1>Secure Password Generator</h1>
+            <GenerationControls onGenerate={generatePassword} />
+            <GeneratedPassword password={password}  />
         </div>
     );
 };

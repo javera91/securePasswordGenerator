@@ -4,15 +4,15 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface GeneratedPasswordProps {
-    contrasena: string;
+    password: string;
 }
 
-const GeneratedPassword: React.FC<GeneratedPasswordProps> = ({ contrasena }) => {
+const GeneratedPassword: React.FC<GeneratedPasswordProps> = ({ password }) => {
     const [open, setOpen] = useState(false); // Estado para controlar la visibilidad del Alert
-    const contrasenaRef = useRef<HTMLInputElement>(null);
-    const copiarContrasena = () => { 
-        if (contrasenaRef.current) {
-            contrasenaRef.current.select();
+    const passwordRef = useRef<HTMLInputElement>(null);
+    const copypassword = () => { 
+        if (passwordRef.current) {
+            passwordRef.current.select();
             document.execCommand('copy');
             setOpen(true);
         }
@@ -44,13 +44,13 @@ const GeneratedPassword: React.FC<GeneratedPasswordProps> = ({ contrasena }) => 
                 open={open}
                 autoHideDuration={6000}
                 onClose={handleClose}
-                message="La contraseña ha sido guardada en el portapapeles."
+                message="The password has been saved in the clipboard.."
                 action={action}
                 anchorOrigin={{ vertical:'top', horizontal:'center' }}
             />
-            <h2>Contraseña Generada</h2>
-            <input type="text" value={contrasena} readOnly ref={contrasenaRef} />
-            <button onClick={copiarContrasena}>Copiar</button>
+            <h2>Generated Password</h2>
+            <input type="text" value={password} readOnly ref={passwordRef} />
+            <button onClick={copypassword}>Copy</button>
         </div>
     );
 };

@@ -4,6 +4,7 @@
 Se creó el componente generatedPassword.tsx
 
 ## H2 - Crear archivos con múltiples componentes: Crear componentes para los controles de generación (longitud, criterios) y la contraseña resultante.
+
 ```ruby
   const manejarGenerar = () => {
         onGenerar(longitud, incluirMayusculas, incluirNumeros, incluirSimbolos);
@@ -22,9 +23,12 @@ Se creó el componente generatedPassword.tsx
     };
 ```
 
-- ¿Qué hace este fragmento de código?
-- ¿Cómo cumple con el requisito de la habilidad?
-- ¿Por qué es la mejor forma de implementarlo?
+### ¿Qué hace este fragmento de código?
+Controla la generación de contraseñas: manejarGenerar activa la generación con los criterios especificados, y manejarLongitudChange ajusta la longitud dentro de un rango de 8 a 16 caracteres.
+### ¿Cómo cumple con el requisito de la habilidad?
+Cumple al separar los controles de longitud y criterios de generación, permitiendo un manejo flexible y preciso de ambos.
+### ¿Por qué es la mejor forma de implementarlo?
+Es modular y fácil de mantener; asegura que la longitud esté siempre en un rango válido y permite futuros ajustes o ampliaciones sin afectar la estructura básica del código.
 
 ## H3 - Usar JSX para crear el formulario de selección de criterios y mostrar la contraseña. 
 
@@ -49,6 +53,13 @@ Se creó el componente generatedPassword.tsx
             <button onClick={manejarGenerar}>Generar Contraseña</button>
         </div>
 ```
+### ¿Qué hace este fragmento de código?
+Crea un formulario en JSX que permite seleccionar la longitud y los criterios (mayúsculas, números, símbolos) para generar una contraseña. Cada control está vinculado a un estado que se actualiza con las selecciones del usuario.
+### ¿Cómo cumple con el requisito de la habilidad?
+Utiliza JSX para construir la interfaz gráfica del formulario, cumpliendo con el requisito de mostrar opciones de generación de contraseña y el botón para generarla.
+### ¿Por qué es la mejor forma de implementarlo?
+Es directo y legible, aprovechando la simplicidad de JSX para gestionar el estado en tiempo real. Esto facilita la actualización de cada campo y hace que el formulario sea fácil de mantener y modificar si se agregan más criterios en el futuro.
+    
 ## H4 - Usar JSX para crear el formulario de selección de criterios y mostrar la contraseña. 
 ```ruby
             <label>
