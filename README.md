@@ -87,6 +87,22 @@ Utiliza JSX para construir el formulario de selección de criterios, permitiendo
 Es una solución clara y reactiva: cada opción está vinculada al estado del componente, facilitando la actualización en tiempo real y manteniendo la interfaz organizada y fácil de expandir si se desean añadir más opciones en el futuro.
 
 ## H5 - Configurar componentes con props: 
+```ruby
+interface GenerationControlsProps {
+    onGenerate: (length: number, includeUppercase: boolean, includeNumbers: boolean, includeSymbols: boolean) => void;
+}
+
+const GenerationControls: React.FC<GenerationControlsProps> = ({ onGenerate }) => {
+    // ...resto del código
+};
+```
+### ¿Qué hace este fragmento de código?
+Define un componente de control para configurar criterios de generación de contraseñas y pasar los valores seleccionados al componente padre mediante la función onGenerate.
+### ¿Cómo cumple con el requisito de la habilidad?
+Configura el componente con props, permitiendo que GenerationControls envíe configuraciones al componente padre de manera modular.
+### ¿Por qué es la mejor forma de implementarlo?
+Usar props hace que el componente sea reutilizable y fácil de mantener, permitiendo una separación clara entre lógica y presentación.
+
 ## H6 - Renderizar condicionalmente:
 
 ```ruby
